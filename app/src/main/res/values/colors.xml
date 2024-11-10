@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorTitleText">#2588F0</color>
+    <color name="colorTitleButton">#835409</color>
+    <color name="colorTitleButtonText">#5BBEE9</color>
+    <color name="layoutProductUp">#47737372</color>
+    <color name="layoutProductUpText">#23233E</color>
+    <color name="itemRelativeLayoutBackground">#8D1A1A38</color>
+    <color name="colorSecondActivButton">#B31E2D45</color>
+    <color name="layoutProductUpText22">#23233E</color>
+    <color name="toolBarMainActivityBackground">#787E5D24</color>
+</resources>
