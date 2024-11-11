@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class CommentActivity : AppCompatActivity() {
     private val GALLARY_REQUEST = 302
+    private val LAUNCH_SECOND_ACTIVITY = 101
     private var photoUri: Uri? = null
 
     private lateinit var productCommentTV: TextView
@@ -67,7 +68,7 @@ class CommentActivity : AppCompatActivity() {
             }
             R.id.backMenuMain ->{
                 val intent = Intent(this, SecondActivity::class.java)
-                startActivity(intent)
+                startActivityForResult(intent,LAUNCH_SECOND_ACTIVITY )
             }
         }
         return super.onOptionsItemSelected(item)

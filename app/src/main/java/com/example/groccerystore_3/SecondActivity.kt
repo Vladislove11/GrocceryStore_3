@@ -18,6 +18,7 @@ import androidx.lifecycle.ViewModelProvider
 
 class SecondActivity : AppCompatActivity() {
     private val GALLARY_REQUEST = 302
+    private val LAUNCH_SECOND_ACTIVITY = 101
     private var photoUri: Uri? = null
     //var products: MutableList<Product> = mutableListOf()
     private lateinit var productViewModel: ProductViewModel
@@ -65,7 +66,8 @@ class SecondActivity : AppCompatActivity() {
                 intent.putExtra("nameProd", productViewModel.products[position].name)
                 intent.putExtra("priceProd", productViewModel.products[position].price)
                 intent.putExtra("photoProd", productViewModel.products[position].image)
-                startActivity(intent)
+                startActivityForResult(intent,LAUNCH_SECOND_ACTIVITY )
+
             }
     }
 
@@ -102,12 +104,17 @@ class SecondActivity : AppCompatActivity() {
             GALLARY_REQUEST -> if (resultCode == RESULT_OK){
                 photoUri = data?.data
                 editImageIV.setImageURI(photoUri)
+                }
+            LAUNCH_SECOND_ACTIVITY -> if (resultCode == RESULT_OK){
+                listAdapter = ListAdapter(this@SecondActivity, productViewModel.products)
+                listViewLV.adapter = listAdapter
             }
         }
     }
 
     override fun onResume() {
         super.onResume()
+        listAdapter = ListAdapter(this@SecondActivity, productViewModel.products)
         listViewLV.adapter = listAdapter
     }
 }
