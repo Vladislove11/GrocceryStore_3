@@ -106,15 +106,8 @@ class SecondActivity : AppCompatActivity() {
                 editImageIV.setImageURI(photoUri)
                 }
             LAUNCH_SECOND_ACTIVITY -> if (resultCode == RESULT_OK){
-                listAdapter = ListAdapter(this@SecondActivity, productViewModel.products)
-                listViewLV.adapter = listAdapter
+                listAdapter?.notifyDataSetChanged()
             }
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        listAdapter = ListAdapter(this@SecondActivity, productViewModel.products)
-        listViewLV.adapter = listAdapter
     }
 }

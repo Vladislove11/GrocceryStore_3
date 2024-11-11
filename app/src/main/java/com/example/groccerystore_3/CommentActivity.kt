@@ -68,7 +68,8 @@ class CommentActivity : AppCompatActivity() {
             }
             R.id.backMenuMain ->{
                 val intent = Intent(this, SecondActivity::class.java)
-                startActivityForResult(intent,LAUNCH_SECOND_ACTIVITY )
+                setResult(RESULT_OK)
+                finish()
             }
         }
         return super.onOptionsItemSelected(item)
